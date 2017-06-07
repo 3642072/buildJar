@@ -6,6 +6,7 @@
 1. 按需打包jar：
    * 全项目打包jar
    * 指定输出Jar包的包名路径列表
+   * 指定输出Jar包的class列表
    * 过滤指定包名路径列表
    * 过滤指定class
    * 过滤指定jar
@@ -43,6 +44,8 @@
        applyMappingFile="originMapping/mapping.txt"
        //需要输出jar的包名列表,当此参数为空时，则默认全项目输出,支持多包,如 includePackage=['com/adison/testjarplugin/include','com/adison/testjarplugin/include1'...]
        includePackage=['com/adison/testjarplugin/include']
+      //需要输出jar的类名列表
+     includeClass=['com/adison/testjarplugin/include/TestInclude.class']
        //不需要输出jar的jar包列表,如['baidu.jar','baidu1.jar'...]
        excludeJar=[]
        //不需要输出jar的类名列表,如['baidu.calss','baidu1.class'...]
@@ -51,18 +54,50 @@
        excludePackage=['com/adison/testjarplugin/exclude']
    }
    ```
+
 3. 使用
-    *  打包普通jar
-   ```
-   ./gradlew buildJar
-   ```
-    *  打包混淆jar
-   ```
-   ./gradlew buildProguardJar
-   ```
-    ​
+
+   * 打包普通jar
+
+     ```groovy
+     mac or linux
+     ./gradlew buildJar
+
+     windows
+     gradlew.bat buildJar
+     ```
+
+   * 打包混淆jar
+
+     ```groovy
+     mac or linux
+     ./gradlew buildProguardJar
+
+     windows
+     gradlew.bat buildProguardJar
+     ```
+
 
    > 可参见[使用demo](https://github.com/adisonhyh/TestJarPlugin/)
+
+## 更新说明
+### 1.0.0
+* 支持按需打包jar：
+   * 全项目打包jar
+   * 指定输出Jar包的包名路径列表
+   * 过滤指定包名路径列表
+   * 过滤指定class
+   * 过滤指定jar
+* 支持混淆打包jar
+* 支持applymapping
+
+### 1.0.1
+
+* 修复bug
+
+### 1.0.2
+
+* 增加指定输出Jar包的class列表
 
 ## LICENSE
 

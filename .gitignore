@@ -30,6 +30,7 @@ proguard/
 .idea/
 build/
 /*/build/
+repo/
 
 #Mac OS
 .DS_Store

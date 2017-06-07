@@ -5,7 +5,9 @@ import org.gradle.api.tasks.Input
 
 class BuildJarExtension {
     @Input
-    HashSet<String> includePackage = [];//需要输出jar的包名列表,当此参数为空时，则默认全项目输出
+    HashSet<String> includePackage = [];//需要输出jar的包名列表,当此参数且includeClass为空时，则默认全项目输出
+    @Input
+    HashSet<String> includeClass = [];//需要输出jar的类名列表,当此参数且includePackage为空时，则默认全项目输出
     @Input
     HashSet<String> excludeJar = [];//不需要输出jar的jar包
     @Input

@@ -33,6 +33,7 @@ class BuildJarPlugin implements Plugin<Project> {
         project.afterEvaluate {
             BuildJarExtension jarExtension = BuildJarExtension.getConfig(project);
             def includePackage = jarExtension.includePackage
+            def includeClass = jarExtension.includeClass
             def excludeClass = jarExtension.excludeClass
             def excludePackage = jarExtension.excludePackage
             def excludeJar = jarExtension.excludeJar
@@ -67,16 +68,24 @@ class BuildJarPlugin implements Plugin<Project> {
                                 }
 
                             }
+
+                            if (includeClass != null && includeClass.size() > 0) {
+                                includeClass.each {
+                                    //打包指定class
+                                    buildJar.include(it)
+                                }
+                            }
+
                             if (includePackage != null && includePackage.size() > 0) {
                                 includePackage.each {
                                     //仅仅打包指定包名下class
                                     buildJar.include("${it}/**/*.class")
                                 }
 
-                            } else {
-                                //默认全项目构建jar
+                            }
+                            if((includeClass == null || includeClass.size() <= 0)&&(includePackage == null || includePackage.size() <= 0)){
+                                //当includeClass和includePackage都为空时默认全项目构建jar
                                 buildJar.include("**/*.class")
-
                             }
                         }
                         project.task(buildJarBeforeDex) << {

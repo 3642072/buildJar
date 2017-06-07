@@ -3,7 +3,7 @@ apply plugin: 'maven'
 apply plugin: 'com.jfrog.bintray'
 apply plugin: 'maven-publish'
 
-version = '1.0.1'
+version = '1.0.2'
 group = 'com.adison.gradleplugin'
 archivesBaseName = 'jar'
 
@@ -16,7 +16,7 @@ repositories {
 dependencies {
     compile gradleApi()
     compile localGroovy()
-    compile 'com.android.tools.build:gradle:2.1.2'
+    compile 'com.android.tools.build:gradle:1.5.0'
     compile 'org.ow2.asm:asm:5.0'
 
 }
