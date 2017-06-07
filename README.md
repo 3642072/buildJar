@@ -81,6 +81,15 @@
    > 可参见[使用demo](https://github.com/adisonhyh/TestJarPlugin/)
 
 ## 更新说明
+
+### 1.0.2
+
+- 增加指定输出Jar包的class列表
+
+### 1.0.1
+
+- 修复bug
+
 ### 1.0.0
 * 支持按需打包jar：
    * 全项目打包jar
@@ -90,14 +99,6 @@
    * 过滤指定jar
 * 支持混淆打包jar
 * 支持applymapping
-
-### 1.0.1
-
-* 修复bug
-
-### 1.0.2
-
-* 增加指定输出Jar包的class列表
 
 ## LICENSE
 
