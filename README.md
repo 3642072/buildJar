@@ -42,7 +42,7 @@
        //是否需要默认的混淆配置proguard-android.txt
        needDefaultProguard=true
        applyMappingFile="originMapping/mapping.txt"
-       //需要输出jar的包名列表,当此参数为空时，则默认全项目输出,支持多包,如 includePackage=['com/adison/testjarplugin/include','com/adison/testjarplugin/include1'...]
+       //需要输出jar的包名列表,当includePackage&includeClass为空时，则默认全项目输出,支持多包,如 includePackage=['com/adison/testjarplugin/include','com/adison/testjarplugin/include1'...]
        includePackage=['com/adison/testjarplugin/include']
       //需要输出jar的类名列表
      includeClass=['com/adison/testjarplugin/include/TestInclude.class']
@@ -79,6 +79,17 @@
 
 
    > 可参见[使用demo](https://github.com/adisonhyh/TestJarPlugin/)
+
+4. 注意：
+
+   > 1. 当includePackage&includeClass为空时，则全项目输出
+   >
+   >    ```groovy
+   >     includePackage=[]
+   >     includeClass=[]
+   >    ```
+   >
+   > 2. 优先级：exclude > include，即当exclude和include的class或package相同时，优先exclude
 
 ## 更新说明
 
