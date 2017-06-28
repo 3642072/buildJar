@@ -78,7 +78,7 @@
      ```
 
 
-   > 可参见[使用demo](https://github.com/adisonhyh/TestJarPlugin/)
+   > 可参见[使用demo](https://github.com/3642072/TestJarPlugin/)
 
 4. 注意：
 
